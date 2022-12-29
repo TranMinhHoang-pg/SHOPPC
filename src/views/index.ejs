@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <%- include('./partials/head'); %>
 </head>
-<body>
+<body class="container">
+
+<header>
+  <%- include('./partials/header'); %>
+</header>
+
+<main>
   <table>
     <tr>
        <th>Dimension</th><th>Quantity</th><th>Factory: rx</th>
@@ -14,12 +17,18 @@
  
     <% for (var i = 0; i < products.length; /* I save the data in a variable 'products', I don't know how you named your variable  */  i++) { %>
      <tr>
-       <td><%= products[i].Name %></td>
+       <td><%= products[i].NAME %></td>
        <Td>
-        <a href="/details/<%= products[i].ID %>">clicj</a>
+        <a href="/details/<%= products[i].ID %>">click</a>
        </Td>
      </tr>    
     <% } %>
  </table>
+</main>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
 </body>
 </html>
