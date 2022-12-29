@@ -1,5 +1,5 @@
-import connection from "../configs/connectDB";
-const getHomeController = (req,res) => {
+import pool from "../configs/connectDB";
+let getHomeController = async (req,res) => {
     // let data =[]
     // // simple query
     // connection.query(
@@ -14,10 +14,8 @@ const getHomeController = (req,res) => {
     //     })
         
 // })
-
-return res.render("index.ejs")
-}
-
+    const [rows, fields ] = await pool.execute('SELECT * FROM `products');
+    return res.render("index.ejs",{products: rows})}
 export default {
     getHomeController
 };

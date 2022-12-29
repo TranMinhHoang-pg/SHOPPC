@@ -1,7 +1,10 @@
-const getdetailsController = (req,res) => {
-  
+import pool from "../configs/connectDB";
 
-return res.render("details.ejs")
+const getdetailsController = async (req,res) => {
+    let id = req.params.id
+    let product = await pool.execute(`select * from products where id = ?`,[id])
+
+    return res.render("details.ejs",{product: product[0]})
 }
 
 export default {
