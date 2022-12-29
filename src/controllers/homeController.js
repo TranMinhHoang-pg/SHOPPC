@@ -14,7 +14,7 @@ let getHomeController = async (req,res) => {
     //     })
         
 // })
-    const [rows, fields ] = await pool.execute('SELECT * FROM `products');
+    const [rows, fields ] = await pool.execute('SELECT * FROM products');
     return res.render("index.ejs",{products: rows})}
 export default {
     getHomeController

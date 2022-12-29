@@ -14,9 +14,10 @@
  
     <% for (var i = 0; i < products.length; /* I save the data in a variable 'products', I don't know how you named your variable  */  i++) { %>
      <tr>
-       <td><%= products[i].NAME %></td>
-       <td><%= products[i].DESCRIBE %></td>
-       <td><%= products[i].PRICE %></td>
+       <td><%= products[i].Name %></td>
+       <Td>
+        <a href="/details/<%= products[i].ID %>">clicj</a>
+       </Td>
      </tr>    
     <% } %>
  </table>
